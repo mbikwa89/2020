@@ -44,6 +44,26 @@ Within this Readme.md describe the architecture above, giving detail when and ho
 **Please do not reference any websites or published articles.** 
 **We are looking for original content!** 
 **We do not want to see definitions of the AWS components.**
+**
+describe the architecture:
+Availability:
+
+Using dual zone deployment, the high availability is achieved at all the layers.
+MySQL DB configured in sync mode will keep the data highly available.
+Load balancers are used to distribute the load in both the zones.
+Auto scaling, configured, would handle the high load situation for the application.
+
+Security:
+
+Various firewall layers have been replaced by security groups and providing the same features of security.
+All the app servers and web servers were kept as hardened templates and can be used to create more instances if need be.
+
+Cross cutting concerns:
+
+Logs can be redirected to S3 and further old logs can be moved to Glacier.
+Cloud Watch can be used for monitoring and alerting in case of any incident.
+
+We can utilize amazing features of cloud like multi zone deployment, unlimited and various cheaper mode of storage, auto scaling, RDS, security groups and by using same, we can get a little better version of deployment in cloud compared to on prem deployment.
 
 
 ##### Hints
